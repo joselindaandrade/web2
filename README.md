@@ -1,0 +1,151 @@
+# web2
+<!DOCTYPE html>
+ <html>
+
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FrontEnd_DOM_NICOLLE_JOSELINDA</title>
+        <style>
+            .lembrete {
+                margin: 40px 0;
+                align-items: center;
+            }
+
+            h1 {
+                color: rgb(23, 137, 230);
+                margin: 80px 0;
+            }
+
+            .centralizar {
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            .bt1 {
+                background-image: ;
+            }
+
+            .bt2 {
+                background-image: ;
+            }
+        </style>
+
+
+    </head>
+
+
+ <body
+    
+  background="https://www.pucsp.br/sites/default/files/curso_graduacao/jogos-digitais.jpg"
+
+
+    >
+
+      <div class="centralizar">
+
+        <div id="divPai">
+            
+       <h1 style="font-size: 80px;"> PLAY GIRL</h1>
+            
+
+
+        </div>
+        <div><br>
+            <form name="frmCadastro" id="frmCadastro">
+                <input class="addText" type="text" id="namee" nome="nome" value="" placeholder="Nome do jogo" size="33">
+                <button id="addTextButton" onclick="return validaForms();">Enviar</button>
+                </br>
+            </form>
+
+            <br>
+            <form name="frmCadastro" id="frmCdastro">
+                Player 1 <input type="text" style="font-size: 15px;" name="nome" placeholder="nick name" id="bt01">
+
+                <button class="bt1" type="reset"><img src="https://w7.pngwing.com/pngs/924/281/png-transparent-button-delete-key-icon-warning-icons-text-sign-area.png" width="15" height="15"></button>
+
+                <button class="bt1" id="bt1" type="reset"><img src="https://e7.pngegg.com/pngimages/336/551/png-clipart-computer-icons-symbol-encapsulated-postscript-edit-miscellaneous-angle-thumbnail.png"12" height="15"></button>
+
+
+                </br>
+        </div>
+
+
+        </form>
+        <br>
+        <form name="frmCadastro" id="frmCdastro">
+            <div>
+                Player 2 <input type="text" style="font-size: 15px" name="nome" placeholder="nick name" id="bt2">
+
+                <button type="reset"><img src="https://w7.pngwing.com/pngs/924/281/png-transparent-button-delete-key-icon-warning-icons-text-sign-area.png" width="15" height="15"></button>
+
+                <button id="bt2" type="reset"><img src="https://e7.pngegg.com/pngimages/336/551/png-clipart-computer-icons-symbol-encapsulated-postscript-edit-miscellaneous-angle-thumbnail.png" width="15" height="15"
+                        onclick="changeColor();"></button>
+
+                </br>
+            </div>
+
+        </form>
+
+    </div>
+ </body>
+<script>
+  
+        var textForm = document.getElementById("textForm");
+        var textInput = document.getElementById("textInput");
+        var addTextButton = document.getElementById("addTextButton");
+        var textList = document.getElementById("textList");
+
+
+        function addText(text) {
+          var listItem = document.createElement("li");
+          listItem.innerText = text;
+      
+          var editButton = document.createElement("button");
+          editButton.innerText = "Edit";
+          editButton.classList.add("editButton");
+          editButton.addEventListener("click", function() {
+            textInput.value = text; 
+            listItem.remove(); 
+            addTextButton.innerHTML = "Submit"; 
+          });
+      
+          var deleteButton = document.createElement("button");
+          deleteButton.innerText = "Delete";
+          deleteButton.classList.add("deleteButton");
+          deleteButton.addEventListener("click", function() {
+            listItem.remove();
+          });
+      
+          listItem.appendChild(editButton);
+          listItem.appendChild(deleteButton);
+          textList.appendChild(listItem);
+        }
+      
+        textForm.addEventListener("submit", function(event) {
+          event.preventDefault(); 
+          var text = textInput.value;
+          addText(text); 
+          textInput.value = ""; 
+          addTextButton.innerHTML = "Add Text"; 
+        });
+        function validaForms(){
+            var nome=document.getElementById("namee");
+            if(namee.value==""){
+                alert("Este campo não pode permanecer vazio");
+                name.focus();
+
+                return false;
+            }
+        }
+    
+    </script>
+ 
+
+</html>
